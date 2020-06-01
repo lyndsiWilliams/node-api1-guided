@@ -1,5 +1,5 @@
 # GETTING STARTED
-- 1 - yarn add express
+- 1 - npm i express
 - 2 - import through const
 - 3 - create server
 - 4 - create port
