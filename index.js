@@ -15,7 +15,7 @@ server.get('/', (req, res) => {
   res.json({ hello: 'Web 26' });
 });
 
-// GET list of hubs
+// GET-FIND list of hubs
 server.get('/api/hubs', (req, res) => {
   // go and get the hubs from the databaase
   Hubs.find().then(hubs => {
@@ -27,7 +27,7 @@ server.get('/api/hubs', (req, res) => {
   res.status(200)
 })
 
-// POST a hub
+// POST-ADD a hub
 server.post('/api/hubs', (req, res) => {
   // axios.post(url, data, options); <-- The data will be in the body of the request
   const hubInfo = req.body;
@@ -42,7 +42,7 @@ server.post('/api/hubs', (req, res) => {
   res.status(200)
 })
 
-// DELETE
+// DELETE-REMOVE
 // :id is a banana word, make sure req.params matches
 server.delete('/api/hubs/:id', (req, res) => {
   Hubs.remove(req.params.id).then(removed => {
@@ -54,7 +54,7 @@ server.delete('/api/hubs/:id', (req, res) => {
   res.status(200)
 })
 
-// PUT
+// PUT-UPDATE
 server.put('/api/hubs/:id', (req, res) => {
   const changes = req.body
   Hubs.update(req.params.id, changes)
